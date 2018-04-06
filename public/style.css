@@ -1,0 +1,16 @@
+#red, #yellow, #green {
+	width: 200px;
+	height: 200px;
+	border: 1px solid white;
+	border-radius: 100px;
+	float: left;
+}
+#red {
+	background: red;
+}
+#yellow {
+	background: yellow;
+}
+#green {
+	background: green;
+}

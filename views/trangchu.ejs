@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NJS</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io('http://huu.yez.vn:2000');
+		socket.on('server-send-mau',function(data){
+			$('body').attr('bgcolor',data);
+		});
+
+		$(document).ready(function(){
+			$('#red').click(function(){
+               socket.emit('client-send-mau','red');
+			});
+			$('#yellow').click(function(){
+               socket.emit('client-send-mau','yellow');
+			});
+			$('#green').click(function(){
+               socket.emit('client-send-mau','green');
+			});
+
+		});
+	</script>
+
+</head>
+<body bgcolor="pink">
+        <div id="red"></div>
+		<div id="yellow"></div>
+		<div id="green"></div>
+</body>
+</html>
